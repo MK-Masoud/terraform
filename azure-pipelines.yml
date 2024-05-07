@@ -27,3 +27,13 @@ stages:
         dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
         tags: |
           $(tag)
+  - job: Bulid
+    displayName: Docker1
+    steps:
+    - task: Docker@1
+      displayName: Docker1
+      inputs:
+        command: Build an image
+        dockerFile: '$(Build.SourcesDirectory)/Dockerfile'
+       
+    
