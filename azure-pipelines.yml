@@ -10,7 +10,7 @@ resources:
 
 variables:
   tag: '$(Build.BuildId)'
-
+  DOCKER_BUILDKIT: 1
 stages:
 - stage: Build
   displayName: Build image
@@ -27,13 +27,6 @@ stages:
         dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
         tags: |
           $(tag)
-  - job: Bulid
-    displayName: Docker1
-    steps:
-    - task: Docker@1
-      displayName: Docker1
-      inputs:
-        command: Build an image
-        dockerFile: '$(Build.SourcesDirectory)/Dockerfile'
+
        
     
