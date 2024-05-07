@@ -19,6 +19,8 @@ stages:
     displayName: Build
     pool:
       vmImage: ubuntu-latest
+    variables:
+     DOCKER_BUILDKIT: 1
     steps:
     - task: Docker@2
       displayName: Build an image
