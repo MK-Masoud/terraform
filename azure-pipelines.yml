@@ -21,7 +21,7 @@ stages:
       vmImage: ubuntu-latest
     variables:
      DOCKER_BUILDKIT: 1
-    steps:
+    steps:    
     - task: Docker@2
       displayName: Build an image
       inputs:
@@ -29,6 +29,14 @@ stages:
         dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
         tags: |
           $(tag)
-
-       
-    
+- stage: Deploy
+  jobs: 
+  - job: Deploy
+    steps:
+      - task: UsePythonVersion@0
+        inputs:
+           versionSpec: '3.x'
+           addToPath: true
+      - script: |
+         terraform init
+         terraform apply --auto-approve '-var app_service_name="asdnvjashfd", -var app_service_plan_name= " asdasdasd" -var acr_name="asdasdasd"'         
