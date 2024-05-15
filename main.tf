@@ -32,6 +32,7 @@ resource "azurerm_app_service_plan" "app_service_plan" {
     tier = "Standard"
     size = "S1"
   }
+  depends_on = [ azurerm_resource_group.rc ]
 }
 
 
@@ -41,6 +42,7 @@ resource "azurerm_container_registry" "acr" {
   location                 = var.location
   sku                      = "Basic"
   admin_enabled            = false
+  depends_on = [ azurerm_resource_group.rc ]
 }
 
 
@@ -54,7 +56,7 @@ resource "azurerm_app_service" "app_service" {
   location            = var.location
   resource_group_name = var.resource_group_name-
   app_service_plan_id = azurerm_app_service_plan.app_service_plan.id
-  
+  depends_on = [ azurerm_resource_group.rc ]
 
 }
 
