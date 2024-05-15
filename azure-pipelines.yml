@@ -38,6 +38,9 @@ stages:
   jobs:   
   - job:
     steps:
+     - task : TerraformInstaller@1
+  - job: Plan
+    steps:
       - task: TerraformTaskV1@0
         inputs:
           provider: 'azurerm'
