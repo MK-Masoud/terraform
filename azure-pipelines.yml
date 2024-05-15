@@ -36,9 +36,6 @@ stages:
         publishLocation: 'Container'
 - stage: Deploy
   jobs:   
-  - job:
-    steps:
-     - task : TerraformInstaller@1
   - job: Plan
     steps:
       - task: TerraformTaskV1@0
@@ -53,4 +50,5 @@ stages:
            versionSpec: '3.x'
            addToPath: true
       - script: |
+         terraform init
          terraform apply --auto-approve
