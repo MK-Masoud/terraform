@@ -44,4 +44,4 @@ stages:
            addToPath: true
       - script: |
          terraform init
-         terraform apply --auto-approve  -var app_service_name= "asdnvjashfd", -var app_service_plan_name= "asdasdasd" -var acr_name= "asdasdasd"
+         terraform apply -var-file='variables.tf'
