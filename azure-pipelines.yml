@@ -36,6 +36,13 @@ stages:
         publishLocation: 'Container'
 - stage: Deploy
   jobs:   
+  - job: Init
+    steps:
+    - task: TerraformTaskV1@0
+      inputs:
+        provider: 'azurerm'
+        command: 'init'
+        backendServiceArm: 'Azure subscription 1(1)(aaf76651-a8e8-4960-bf98-c4170867b797)'
   - job: Plan
     steps:
       - task: TerraformTaskV1@0
@@ -50,5 +57,5 @@ stages:
            versionSpec: '3.x'
            addToPath: true
       - script: |
-         terraform init
+         
          terraform apply --auto-approve
