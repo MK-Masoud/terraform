@@ -43,6 +43,6 @@ stages:
            versionSpec: '3.x'
            addToPath: true
       - script: |
-         terraform init -var-file='variables.tf'
-         terraform plan -var-file='variables.tf'
-         terraform apply -var-file='variables.tf'
+         terraform init 
+         terraform plan 
+         terraform apply 
