@@ -17,12 +17,15 @@ variable "location" {
 
 variable "app_service_name" {
   description = "Name of the Azure App Service."
+   default = "asdasfasghgf"
 }
 
 variable "app_service_plan_name" {
   description = "Name of the App Service Plan."
+  default = "asdasfasfasf"
 }
 
 variable "acr_name" {
   description = "Name of the Azure Container Registry."
+   default = "asdasfasuhjghj"
 }
