@@ -27,5 +27,5 @@ variable "app_service_plan_name" {
 
 variable "acr_name" {
   description = "Name of the Azure Container Registry."
-   default = "asdasfasuhjghj"
+   default = "masoudsaraacr"
 }
