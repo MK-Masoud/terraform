@@ -43,6 +43,7 @@ stages:
            versionSpec: '3.x'
            addToPath: true
       - script: |
+         az login
          terraform init 
          terraform plan 
          terraform apply 
